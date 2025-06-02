@@ -111,7 +111,7 @@ def generate_launch_description():
         package='sick_scan_xd',
         executable='sick_generic_caller',
         name='sick_node',
-        arguments=["/opt/ros/humble/share/sick_scan_xd/launch/sick_tim_5xx.launch"]
+        arguments=["/opt/ros/humble/share/sick_scan_xd/launch/sick_tim_5xx.launch"] # Be sure to update this to point to the launch folder's update .launch file
     )
     ackermann_mux_node = Node(
         package='ackermann_mux',

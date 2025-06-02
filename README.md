@@ -23,7 +23,11 @@ sudo apt update
 sudo apt-get install ros-humble-sick-scan-xd
 ```
 
-Change the sick lidar ip address at `/opt/ros/humble/share/sick_scan_xd/launch/sick_tim_5xx.launch`
+**Warning:** Make sure to use the `sick_tim_5xx.launch` file located in the `f1tenth_stack` package's launch directory:
+
+`<f1tenth_stack>/launch/sick_tim_5xx.launch`
+
+Bring up with `ros2 launch f1tenth_stack sick_bringup_launch.py`. This file is an updated version of the original `sick_tim_5xx.launch` file that changes the "frame_id" to "laser" and "tf_base_frame_id" to "base_link", which is compatible with the slam_toolbox and particle filter. You will still need to set the IP address of the lidar in the launch file.
 
 Bring up with `ros2 launch f1tenth_stack sick_bringup_launch.py`
 
